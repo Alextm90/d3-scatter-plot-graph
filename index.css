@@ -1,0 +1,13 @@
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    background-color: #e5f0cb;
+}
+
+#tooltip {
+    padding: 7px;
+    border-radius: 7px;
+}
