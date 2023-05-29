@@ -28,7 +28,7 @@ const chart = async () => {
     .then(data => {
 
 // create scales/axes
- const xScale = d3.scaleTime()
+const xScale = d3.scaleTime()
         .domain([d3.min(data, (d) => d.Year - 1), d3.max(data, (d) => d.Year + 1)])
         .range([padding, width - padding])
 
@@ -80,7 +80,7 @@ legend .append('rect')
         .attr('y', 359)
         .attr('width', 12)
         .attr('height', 12)
-        .attr('fill', 'blue')
+        .attr('fill', '#a7dc98')
         
  legend.append('text')
         .text('No Doping Allegations')
@@ -92,7 +92,7 @@ legend .append('rect')
         .attr('y', 339)
         .attr('width', 12)
         .attr('height', 12)
-        .attr('fill', 'red')            
+        .attr('fill', 'white')            
       
 // add data points to graph 
 svg.selectAll('circle')
@@ -100,7 +100,6 @@ svg.selectAll('circle')
         .join('circle')
         .attr('class', 'dot')
         .style('stroke', 'black')
-        .style('opacity', '.8')
         .attr('r', (d, i) => 6)
         .attr('cx', (d, i) => {
             return xScale(d.Year)
@@ -117,10 +116,10 @@ svg.selectAll('circle')
        })
        .attr('fill', (d, i) => {
          if (d.URL == "") {
-            return 'red'
+            return 'white'
          }
          else {
-            return 'blue'
+            return '#a7dc98'
          }
       })
         .on('mouseover', (event, d) => {
@@ -130,7 +129,7 @@ svg.selectAll('circle')
            .style('position', 'absolute')
            .style('left', (event.pageX + 25) + 'px')
            .style('top', (event.pageY - 55) + 'px')
-           .style('background-color', 'aquamarine')
+           .style('background-color', '#ffcb77')
            .attr('data-year', d.Year)
        })
         .on('mouseout', () => {
